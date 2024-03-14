@@ -23,9 +23,9 @@ Route::middleware(['auth', 'checkUser'])->group(function () {
     Route::get('/', [SiteController::class , 'index'])->name('home');
     Route::get('/Products-ajax', [ProducController::class, 'getAll'])->name('Products.getall');
 
-    Route::get('/Products-ajaxcolor', [ProducController::class, 'color']);
-    Route::get('/Products-ajaxsize', [ProducController::class, 'size']);
-    Route::post('/filter-data', [ProducController::class, 'price']);
+    Route::get('/Products-ajax_color', [ProducController::class, 'color']);
+    Route::get('/Products-ajax_size', [ProducController::class, 'size']);
+    Route::post('/Products_ajax_price', [ProducController::class, 'price']);
 
 });
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth', 'checkUser']);

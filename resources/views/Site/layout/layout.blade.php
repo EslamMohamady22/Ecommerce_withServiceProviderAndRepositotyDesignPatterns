@@ -116,15 +116,15 @@
                          @foreach ($mainCategories as $mainCategory)
                         <div class="nav-item dropdown dropright">
                             @if (count($mainCategory->child) > 0 )
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ $mainCategory->name }} <i class="fa fa-angle-right float-right mt-1"></i></a>
+                                <a href="#" data-category="{{ $mainCategory->id }}" class="nav-link dropdown-toggle cat" data-toggle="dropdown">{{ $mainCategory->name }} <i class="fa fa-angle-right float-right mt-1"></i></a>
                             @else
-                                <a href="" class="nav-item nav-link">{{ $mainCategory->name }} </a>
+                                <a href="#" data-category="{{ $mainCategory->id }}" class="nav-item nav-link cat">{{ $mainCategory->name }} </a>
                             @endif
-                                <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <div class="dropdown-menu position-absolute rounded-0 border-0 m-0 ">
                                     @if (count($mainCategory->child) > 0)
                                             {{-- {{ dd($mainCategory) }} --}}
                                             @foreach ($mainCategory->child as $name)
-                                                <a href="#" class="dropdown-item">{{ $name->name }}</a>
+                                                <a href="#" data-category="{{ $name->id }}" class="dropdown-item cat">{{ $name->name }}</a>
                                             @endforeach
                                     @endif
                                 </div>
